@@ -1,0 +1,41 @@
+﻿@model Nessa.ViewModels.ItemFormViewModel
+
+@{
+    ViewBag.Title = "ItemForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@Model.Title</h2>
+
+@using (Html.BeginForm("Save", "Items"))
+{
+    <div class="form-group">
+        @Html.LabelFor(i => i.Item.CategoryId)
+        @Html.DropDownListFor(i => i.Item.CategoryId, new SelectList(Model.Categories, "Id", "Name"), "Избери категория", new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.Item.CategoryId)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Item.Name)
+        @Html.TextBoxFor(i => i.Item.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.Item.Name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Item.Price)
+        @Html.TextBoxFor(i => i.Item.Price, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.Item.Price)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Item.Description)
+        @Html.TextAreaFor(i => i.Item.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.Item.Description)
+    </div>
+
+    @Html.HiddenFor(i => i.Item.Id)
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-primary">Запази</button>
+}
+
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
