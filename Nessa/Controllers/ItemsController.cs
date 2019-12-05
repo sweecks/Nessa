@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
 using Nessa.ViewModels;
+using System.IO;
 
 namespace Nessa.Controllers
 {
@@ -43,7 +44,7 @@ namespace Nessa.Controllers
         [AllowAnonymous]
         public ActionResult ItemsInCategory(int id)
         {
-            var items = _context.Items.Include(i => i.Category).Where(i => i.CategoryId == id).ToList();
+            var items = _context.Items.Include(i => i.Category).Include(i => i.Images).Where(i => i.CategoryId == id).ToList();
 
             return View(items);
         }
@@ -81,7 +82,7 @@ namespace Nessa.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Item item)
+        public ActionResult Save(Item item, HttpPostedFileBase images)
         {
             if (!ModelState.IsValid)
             {
@@ -96,6 +97,19 @@ namespace Nessa.Controllers
 
             if (item.Id == 0)
             {
+                if (images != null && images.ContentLength > 0)
+                {
+                    var photo = new Image
+                    {
+                        Path = Path.GetFileName(images.FileName)
+                    };
+
+                    images.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Images/"), images.FileName));
+
+                    item.Images = new List<Image>();
+                    item.Images.Add(photo);
+                }
+
                 _context.Items.Add(item);
             }
             else
