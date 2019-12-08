@@ -7,7 +7,7 @@
 
 <h2>@Model.Title</h2>
 
-@using (Html.BeginForm("Save", "Items"))
+@using (Html.BeginForm("Save", "Items", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     <div class="form-group">
         @Html.LabelFor(i => i.Item.CategoryId)
@@ -28,6 +28,10 @@
         @Html.LabelFor(i => i.Item.Description)
         @Html.TextAreaFor(i => i.Item.Description, new { @class = "form-control" })
         @Html.ValidationMessageFor(i => i.Item.Description)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(i => i.Item.Images)
+        <input class="form-control" type="file" id="Photo" name="images" multiple />
     </div>
 
     @Html.HiddenFor(i => i.Item.Id)
