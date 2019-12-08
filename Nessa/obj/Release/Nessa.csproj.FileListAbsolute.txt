@@ -123,3 +123,4 @@ C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.csproj.GenerateResource.cach
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.csproj.CopyComplete
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.pdb
+C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.csprojAssemblyReference.cache

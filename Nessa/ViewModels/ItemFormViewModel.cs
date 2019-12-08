@@ -10,6 +10,8 @@ namespace Nessa.ViewModels
     {
         public IEnumerable<Category> Categories { get; set; }
 
+        public IEnumerable<Image> Images { get; set; }
+
         public Item Item { get; set; }
 
         public string Title

@@ -30,9 +30,8 @@
         @Html.ValidationMessageFor(i => i.Item.Description)
     </div>
     <div class="form-group">
-        <div class="col-md-10">
-            <input class="form-control" type="file" id="Photo" name="images" />
-        </div>
+        @Html.LabelFor(i => i.Item.Images)
+        <input class="form-control" type="file" id="Photo" name="images" multiple />
     </div>
 
     @Html.HiddenFor(i => i.Item.Id)

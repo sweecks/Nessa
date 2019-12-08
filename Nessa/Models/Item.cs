@@ -14,6 +14,7 @@ namespace Nessa.Models
         [Display(Name = "Име")]
         public string Name { get; set; }
 
+        [Display(Name = "Изображения")]
         public ICollection<Image> Images { get; set; }
 
         [Required(ErrorMessage = "Моля въведете описание!")]

@@ -82,7 +82,7 @@ namespace Nessa.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Save(Item item, HttpPostedFileBase images)
+        public ActionResult Save(Item item, IEnumerable<HttpPostedFileBase> images)
         {
             if (!ModelState.IsValid)
             {
@@ -97,17 +97,21 @@ namespace Nessa.Controllers
 
             if (item.Id == 0)
             {
-                if (images != null && images.ContentLength > 0)
+                item.Images = new List<Image>();
+
+                foreach (var image in images)
                 {
-                    var photo = new Image
+                    if (image != null && image.ContentLength > 0)
                     {
-                        Path = Path.GetFileName(images.FileName)
-                    };
+                        var photo = new Image
+                        {
+                            Path = Path.GetFileName(image.FileName)
+                        };
 
-                    images.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Images/"), images.FileName));
+                        image.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Images/"), image.FileName));
 
-                    item.Images = new List<Image>();
-                    item.Images.Add(photo);
+                        item.Images.Add(photo);
+                    }
                 }
 
                 _context.Items.Add(item);
