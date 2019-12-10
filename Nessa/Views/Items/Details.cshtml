@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="container">
+<div id="oneImage" class="container">
     <div class="card">
         <div class="container-fliud">
             <div class="wrapper row">
@@ -39,7 +39,10 @@
                         {
                             for (int i = 0; i < Model.Images.Count; i++)
                             {
-                                <li><a data-target="#pic-@i" data-toggle="tab"><img src="~/Images/@Model.Images.ElementAt(i).Path" /></a></li>
+                                <li>
+                                    <a data-target="#pic-@i" data-toggle="tab"><img src="~/Images/@Model.Images.ElementAt(i).Path" /></a>
+                                    <button class="js-delete" data-image-id="@Model.Images.ElementAt(i).Id">Изтрии</button>
+                                </li>
                             }
                         }
                         else
@@ -71,3 +74,25 @@
         </div>
     </div>
 </div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $("#oneImage").on("click", ".js-delete", function () {
+                var button = $(this);
+
+                if (confirm("Сигурен ли си, че искаш да изтриеш този продукт?")) {
+                    $.ajax({
+                        url: "/api/images/" + button.attr("data-image-id"),
+                        method: "DELETE",
+                        success: function () {
+                            $('#' + button.attr("data-image-id")).remove();
+                            $("#oneImage").load(location.href + " #oneImage>*", "");
+                        }
+                    });
+                }
+            })
+        });
+    </script>
+}

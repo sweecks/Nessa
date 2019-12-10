@@ -60,7 +60,7 @@ else
             $("#oneItem").on("click", ".js-delete", function () {
                 var button = $(this);
 
-                if (confirm("Сигурен ли си, че искаш да изтриещ този продукт?")) {
+                if (confirm("Сигурен ли си, че искаш да изтриеш този продукт?")) {
                     $.ajax({
                         url: "/api/items/" + button.attr("data-item-id"),
                         method: "DELETE",

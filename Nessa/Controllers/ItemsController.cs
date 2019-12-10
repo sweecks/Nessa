@@ -115,6 +115,9 @@ namespace Nessa.Controllers
                 }
 
                 _context.Items.Add(item);
+                _context.SaveChanges();
+
+                return RedirectToAction("ItemsInCategory", "Items", new { id = item.CategoryId });
             }
             else
             {
@@ -138,11 +141,10 @@ namespace Nessa.Controllers
                         itemInDb.Images.Add(photo);
                     }
                 }
+                _context.SaveChanges();
+
+                return RedirectToAction("Details", "Items", new { id = itemInDb.Id });
             }
-
-            _context.SaveChanges();
-
-            return RedirectToAction("ItemsInCategory", "Items", new { id = item.CategoryId });
         }
 
         //public ActionResult Remove(int id)
