@@ -60,16 +60,18 @@ else
             $("#oneItem").on("click", ".js-delete", function () {
                 var button = $(this);
 
-                if (confirm("Сигурен ли си, че искаш да изтриеш този продукт?")) {
-                    $.ajax({
-                        url: "/api/items/" + button.attr("data-item-id"),
-                        method: "DELETE",
-                        success: function () {
-                            $('#' + button.attr("data-item-id")).remove();
-                            $("#oneItem").load(location.href + " #oneItem>*", "");
-                        }
-                    });
-                }
+                bootbox.confirm("Сигурен ли си, че искаш да изтриеш този продукт?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/items/" + button.attr("data-item-id"),
+                            method: "DELETE",
+                            success: function () {
+                                $('#' + button.attr("data-item-id")).remove();
+                                $("#oneItem").load(location.href + " #oneItem>*", "");
+                            }
+                        });
+                    }
+                });
             })
         });
     </script>

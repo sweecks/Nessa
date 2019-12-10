@@ -82,16 +82,18 @@
             $("#oneImage").on("click", ".js-delete", function () {
                 var button = $(this);
 
-                if (confirm("Сигурен ли си, че искаш да изтриеш този продукт?")) {
-                    $.ajax({
-                        url: "/api/images/" + button.attr("data-image-id"),
-                        method: "DELETE",
-                        success: function () {
-                            $('#' + button.attr("data-image-id")).remove();
-                            $("#oneImage").load(location.href + " #oneImage>*", "");
-                        }
-                    });
-                }
+                bootbox.confirm("Сигурен ли си, че искаш да изтриеш този продукт?", function (result) {
+                    if (result) {
+                        $.ajax({
+                            url: "/api/images/" + button.attr("data-image-id"),
+                            method: "DELETE",
+                            success: function () {
+                                $('#' + button.attr("data-image-id")).remove();
+                                $("#oneImage").load(location.href + " #oneImage>*", "");
+                            }
+                        });
+                    }
+                });
             })
         });
     </script>
