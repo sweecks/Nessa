@@ -115,20 +115,36 @@ namespace Nessa.Controllers
                 }
 
                 _context.Items.Add(item);
+                _context.SaveChanges();
+
+                return RedirectToAction("ItemsInCategory", "Items", new { id = item.CategoryId });
             }
             else
             {
-                var itemInDb = _context.Items.Single(s => s.Id == item.Id);
+                var itemInDb = _context.Items.Include(i => i.Images).Single(s => s.Id == item.Id);
 
                 itemInDb.Name = item.Name;
                 itemInDb.Description = item.Description;
                 itemInDb.Price = item.Price;
                 itemInDb.CategoryId = item.CategoryId;
+                foreach (var image in images)
+                {
+                    if (image != null && image.ContentLength > 0)
+                    {
+                        var photo = new Image
+                        {
+                            Path = Path.GetFileName(image.FileName)
+                        };
+
+                        image.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Images/"), image.FileName));
+
+                        itemInDb.Images.Add(photo);
+                    }
+                }
+                _context.SaveChanges();
+
+                return RedirectToAction("Details", "Items", new { id = itemInDb.Id });
             }
-
-            _context.SaveChanges();
-
-            return RedirectToAction("ItemsInCategory", "Items", new { id = item.CategoryId });
         }
 
         //public ActionResult Remove(int id)
