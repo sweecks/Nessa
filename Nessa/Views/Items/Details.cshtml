@@ -1,4 +1,5 @@
 ﻿@model Nessa.Models.Item
+@using Nessa.Models
 
 @{
     ViewBag.Title = "Details";
@@ -41,7 +42,10 @@
                             {
                                 <li>
                                     <a data-target="#pic-@i" data-toggle="tab"><img src="~/Images/@Model.Images.ElementAt(i).Path" /></a>
-                                    <button class="js-delete" data-image-id="@Model.Images.ElementAt(i).Id">Изтрии</button>
+                                    @if (User.IsInRole(RoleName.Admin))
+                                    {
+                                        <button class="js-delete" data-image-id="@Model.Images.ElementAt(i).Id">Изтрии</button>
+                                    }
                                 </li>
                             }
                         }
