@@ -26,9 +26,17 @@ namespace Nessa.Controllers
 
         // GET: Items
         [AllowAnonymous]
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
-            var items = _context.Items.OrderBy(i => i.CategoryId).ToList();
+            var items = new List<Item>();
+            if (search == null)
+            {
+                items = _context.Items.Include(i => i.Images).OrderBy(i => i.CategoryId).ToList();
+            }
+            else
+            {
+                items = _context.Items.Include(i => i.Images).Where(i => i.Name.Contains(search)).OrderBy(i => i.CategoryId).ToList();
+            }
 
             return View(items);
         }
@@ -42,9 +50,18 @@ namespace Nessa.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult ItemsInCategory(int id)
+        public ActionResult ItemsInCategory(int id, string search)
         {
-            var items = _context.Items.Include(i => i.Category).Include(i => i.Images).Where(i => i.CategoryId == id).ToList();
+            var items = new List<Item>();
+
+            if (search == null)
+            {
+                items = _context.Items.Include(i => i.Category).Include(i => i.Images).Where(i => i.CategoryId == id).ToList();
+            }
+            else
+            {
+                items = _context.Items.Include(i => i.Category).Include(i => i.Images).Where(i => i.CategoryId == id && i.Name.Contains(search)).ToList();
+            }
 
             return View(items);
         }
