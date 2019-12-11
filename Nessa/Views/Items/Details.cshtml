@@ -1,4 +1,5 @@
 ﻿@model Nessa.Models.Item
+@using Nessa.Models
 
 @{
     ViewBag.Title = "Details";
@@ -39,10 +40,13 @@
                         {
                             for (int i = 0; i < Model.Images.Count; i++)
                             {
-                                <li>
-                                    <a data-target="#pic-@i" data-toggle="tab"><img src="~/Images/@Model.Images.ElementAt(i).Path" /></a>
-                                    <button class="js-delete" data-image-id="@Model.Images.ElementAt(i).Id">Изтрии</button>
-                                </li>
+                        <li>
+                            <a data-target="#pic-@i" data-toggle="tab"><img src="~/Images/@Model.Images.ElementAt(i).Path" /></a>
+                            @if (User.IsInRole(RoleName.Admin))
+                            {
+                                <button class="js-delete" data-image-id="@Model.Images.ElementAt(i).Id">Изтрии</button>
+                            }
+                        </li>
                             }
                         }
                         else
