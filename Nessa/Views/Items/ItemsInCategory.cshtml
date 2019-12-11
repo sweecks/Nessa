@@ -14,6 +14,14 @@ else
 {
     <h2 style="margin: 50px; text-align: center">@Model.ElementAt(0).Category.Name</h2>
 
+    <p>
+        @using (Html.BeginForm("ItemsInCategory", "Items", FormMethod.Get))
+        {
+            <text>Потърси продукт по име:</text>
+            @Html.TextBox("search") <input type="submit" value="Търси!"/>
+        }
+    </p>
+
     <div class="container">
         <div id="oneItem" class="row">
             @foreach (var item in Model)
@@ -47,7 +55,7 @@ else
                         </div> <!-- bottom-wrap.// -->
                     </figure>
                 </div> <!-- col // -->
-            }
+                }
         </div> <!-- row.// -->
     </div>
     <!--container.//-->
