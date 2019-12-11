@@ -7,6 +7,8 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using Nessa.ViewModels;
 using System.IO;
+using PagedList;
+using PagedList.Mvc;
 
 namespace Nessa.Controllers
 {
@@ -26,19 +28,23 @@ namespace Nessa.Controllers
 
         // GET: Items
         [AllowAnonymous]
-        public ActionResult Index(string search)
+        public ActionResult Index(string search, int? page)
         {
-            var items = new List<Item>();
             if (search == null)
             {
-                items = _context.Items.Include(i => i.Images).OrderBy(i => i.CategoryId).ToList();
+                return View(_context.Items
+                    .Include(i => i.Images)
+                    .OrderBy(i => i.CategoryId)
+                    .ToList().ToPagedList(page ?? 1, 9));
             }
             else
             {
-                items = _context.Items.Include(i => i.Images).Where(i => i.Name.Contains(search)).OrderBy(i => i.CategoryId).ToList();
+                return View(_context.Items
+                    .Include(i => i.Images)
+                    .Where(i => i.Name.Contains(search))
+                    .OrderBy(i => i.CategoryId)
+                    .ToList().ToPagedList(page ?? 1, 9));
             }
-
-            return View(items);
         }
 
         [AllowAnonymous]
@@ -50,20 +56,22 @@ namespace Nessa.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult ItemsInCategory(int id, string search)
+        public ActionResult ItemsInCategory(int id, string search, int? page)
         {
-            var items = new List<Item>();
-
             if (search == null)
             {
-                items = _context.Items.Include(i => i.Category).Include(i => i.Images).Where(i => i.CategoryId == id).ToList();
+                return View(_context.Items
+                    .Include(i => i.Category).Include(i => i.Images)
+                    .Where(i => i.CategoryId == id)
+                    .ToList().ToPagedList(page ?? 1, 9));
             }
             else
             {
-                items = _context.Items.Include(i => i.Category).Include(i => i.Images).Where(i => i.CategoryId == id && i.Name.Contains(search)).ToList();
+                 return View(_context.Items
+                     .Include(i => i.Category).Include(i => i.Images)
+                     .Where(i => i.CategoryId == id && i.Name.Contains(search))
+                     .ToList().ToPagedList(page ?? 1, 9));
             }
-
-            return View(items);
         }
 
         public ActionResult New()
