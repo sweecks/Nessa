@@ -377,3 +377,7 @@ C:\Users\User\Desktop\Nessa Project\Nessa\Nessa\obj\Debug\Nessa.csproj.CoreCompi
 C:\Users\User\Desktop\Nessa Project\Nessa\Nessa\obj\Debug\Nessa.csproj.CopyComplete
 C:\Users\User\Desktop\Nessa Project\Nessa\Nessa\obj\Debug\Nessa.dll
 C:\Users\User\Desktop\Nessa Project\Nessa\Nessa\obj\Debug\Nessa.pdb
+C:\Users\User\Desktop\Nessa Project\Nessa\Nessa\bin\PagedList.dll
+C:\Users\User\Desktop\Nessa Project\Nessa\Nessa\bin\PagedList.Mvc.dll
+C:\Users\User\Desktop\Nessa Project\Nessa\Nessa\bin\PagedList.xml
+C:\Users\User\Desktop\Nessa Project\Nessa\Nessa\bin\PagedList.Mvc.xml
