@@ -10,7 +10,15 @@
 
 @if (!Model.Any())
 {
-    <h2>Няма налични продукти от тази категория!</h2>
+    <h2>Няма намерени продукти!</h2>
+
+    <p>
+        @using (Html.BeginForm("ItemsInCategory", "Items", FormMethod.Get))
+        {
+            <text>Потърси продукт по име:</text>
+            @Html.TextBox("search") <input type="submit" value="Търси!" />
+        }
+    </p>
 }
 else
 {
@@ -20,7 +28,7 @@ else
         @using (Html.BeginForm("ItemsInCategory", "Items", FormMethod.Get))
         {
             <text>Потърси продукт по име:</text>
-            @Html.TextBox("search") <input type="submit" value="Търси!"/>
+            @Html.TextBox("search") <input type="submit" value="Търси!" />
         }
     </p>
 
@@ -57,7 +65,7 @@ else
                         </div> <!-- bottom-wrap.// -->
                     </figure>
                 </div> <!-- col // -->
-                }
+            }
         </div> <!-- row.// -->
     </div>
     <!--container.//-->
