@@ -47,6 +47,8 @@ Thumbs.db
 *.orig
 *.nupkg
 *.tmp
+*.mdf
+*.ldf
 bin/
 obj/
 **/packages/**/*.xml
