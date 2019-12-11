@@ -1,5 +1,7 @@
-﻿@model IEnumerable<Nessa.Models.Item>
+﻿@model IPagedList<Nessa.Models.Item>
 @using Nessa.Models
+@using PagedList
+@using PagedList.Mvc
 
 @{
     ViewBag.Title = "ItemsInCategory";
@@ -59,6 +61,7 @@ else
         </div> <!-- row.// -->
     </div>
     <!--container.//-->
+    @Html.PagedListPager(Model, page => Url.Action("ItemsInCategory", new { page, search = Request.QueryString["search"] }))
 }
 
 @section scripts
