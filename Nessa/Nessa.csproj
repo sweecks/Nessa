@@ -253,6 +253,10 @@
     <Compile Include="Migrations\201911261302359_SeedUsers.Designer.cs">
       <DependentUpon>201911261302359_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912182034312_AddImageToCategory.cs" />
+    <Compile Include="Migrations\201912182034312_AddImageToCategory.Designer.cs">
+      <DependentUpon>201912182034312_AddImageToCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -628,6 +632,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911261302359_SeedUsers.resx">
       <DependentUpon>201911261302359_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912182034312_AddImageToCategory.resx">
+      <DependentUpon>201912182034312_AddImageToCategory.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

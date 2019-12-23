@@ -7,13 +7,30 @@
 
 <h2 style="margin: 50px; text-align: center">Категории</h2>
 
-<div style="margin-left: 20%; margin-right: 20%">
-    <div class="box-green">@Html.ActionLink("Всички", "Index", "Items")</div>
-    @foreach (var category in Model)
-    {
-        <div class="box-green">@Html.ActionLink(category.Name, "ItemsInCategory", "Items", new { id = category.Id }, null)</div>
-    }
+
+<div class="box-green">@Html.ActionLink("Всички", "Index", "Items")</div>
+
+@*<div class="box-green">@Html.ActionLink(category.Name, "ItemsInCategory", "Items", new { id = category.Id }, null)</div>*@
+
+<div class="container">
+    <div id="oneItem" class="row">
+        @foreach (var category in Model)
+        {
+
+            <div class="col-md-4" id="@category.Id" style="margin-bottom: 100px">
+                <figure class="card card-product">
+
+                    <a href="/Items/ItemsInCategory/@category.Id"><div class="img-wrap"><img src="~/Images/@category.ImagePath"></div></a>
+
+                    <figcaption class="info-wrap">
+                        <a href="/Items/ItemsInCategory/@category.Id"><h4 class="title">@category.Name</h4></a>
+                    </figcaption>
+                </figure>
+            </div> <!-- col // -->
+        }
+    </div> <!-- row.// -->
 </div>
+
 
 @section scripts
 {
