@@ -569,6 +569,7 @@
     <Content Include="Views\Items\ItemsInCategory.cshtml" />
     <Content Include="Views\Items\Details.cshtml" />
     <Content Include="Views\Items\ItemForm.cshtml" />
+    <Content Include="Views\Categories\CategoryForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

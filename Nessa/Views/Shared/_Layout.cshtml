@@ -28,6 +28,7 @@
                     <li>@Html.ActionLink("Контакти", "Contact", "Home")</li>
                     @if (User.IsInRole(RoleName.Admin))
                     {
+                        <li>@Html.ActionLink("Добавяне на нова категория", "New", "Categories")</li>
                         <li>@Html.ActionLink("Добавяне на нов продукт", "New", "Items")</li>
                     }
                 </ul>

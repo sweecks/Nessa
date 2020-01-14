@@ -10,9 +10,24 @@ namespace Nessa.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Моля въведете име!")]
+        [Display(Name = "Име")]
         public string Name { get; set; }
 
+        [Display(Name = "Изображение")]
         public string ImagePath { get; set; }
+
+        public string Title
+        {
+            get
+            {
+                if (this.Id != 0)
+                {
+                    return "Редактирай категорията";
+                }
+
+                return "Нова категория";
+            }
+        }
     }
 }
