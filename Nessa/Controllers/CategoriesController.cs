@@ -37,6 +37,20 @@ namespace Nessa.Controllers
             return View("CategoryForm", category);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var category = _context.Categories.SingleOrDefault(c => c.Id == id);
+
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+
+            var viewModel = new Category { Name = category.Name };
+
+            return View("CategoryForm", viewModel);
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Category category, HttpPostedFileBase image)
@@ -67,33 +81,28 @@ namespace Nessa.Controllers
 
                 return RedirectToAction("Index", "Categories");
             }
-            //else
-            //{
-            //    var itemInDb = _context.Items.Include(i => i.Images).Single(s => s.Id == item.Id);
+            else
+            {
+                var categoryInDb = _context.Categories.Single(c => c.Id == category.Id);
 
-            //    itemInDb.Name = item.Name;
-            //    itemInDb.Description = item.Description;
-            //    itemInDb.Price = item.Price;
-            //    itemInDb.CategoryId = item.CategoryId;
-            //    foreach (var image in images)
-            //    {
-            //        if (image != null && image.ContentLength > 0)
-            //        {
-            //            var photo = new Image
-            //            {
-            //                Path = Path.GetFileName(image.FileName)
-            //            };
+                categoryInDb.Name = category.Name;
 
-            //            image.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Images/"), image.FileName));
+                if (image != null && image.ContentLength > 0)
+                {
+                    var photo = new Image
+                    {
+                        Path = Path.GetFileName(image.FileName)
+                    };
 
-            //            itemInDb.Images.Add(photo);
-            //        }
-            //    }
-            //    _context.SaveChanges();
+                    image.SaveAs(Path.Combine(HttpContext.Server.MapPath("~/Images/"), image.FileName));
 
-            //    return RedirectToAction("Details", "Items", new { id = itemInDb.Id });
-            //}
-            return RedirectToAction("Index", "Home");
+                    categoryInDb.ImagePath = photo.Path;
+                }
+
+                _context.SaveChanges();
+
+                return RedirectToAction("Index", "Categories");
+            }
         }
     }
 }
