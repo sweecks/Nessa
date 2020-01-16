@@ -30,6 +30,7 @@
                     {
                         @Html.ActionLink("Редактирай", "Edit", "Categories", new { id = category.Id }, null)
                         <br>
+                        <button class="js-delete" data-category-id="@category.Id">Изтрии</button>
                     }
                 </figure>
             </div> <!-- col // -->
@@ -40,9 +41,24 @@
 
 @section scripts
 {
-    <script>
-        $(document).ready(function () {
-            $("#categories").DataTable();
-        });
-    </script>
+<script>
+    $(document).ready(function () {
+        $("#oneItem").on("click", ".js-delete", function () {
+            var button = $(this);
+
+            bootbox.confirm("Сигурен ли си, че искаш да изтриеш тази категория?", function (result) {
+                if (result) {
+                    $.ajax({
+                        url: "/api/categories/" + button.attr("data-category-id"),
+                        method: "DELETE",
+                        success: function () {
+                            $('#' + button.attr("data-category-id")).remove();
+                            $("#oneItem").load(location.href + " #oneItem>*", "");
+                        }
+                    });
+                }
+            });
+        })
+    });
+</script>
 }

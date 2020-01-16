@@ -386,3 +386,4 @@ C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.Mvc.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.xml
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.Mvc.xml
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Debug\Nessa.Migrations.AddImageToCategory.resources
+C:\Users\User\Desktop\Nessa Project\Nessa\Nessa\obj\Debug\Nessa.Migrations.AddImageToCategory.resources
