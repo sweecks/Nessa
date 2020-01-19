@@ -8,9 +8,6 @@
 
 <h2 style="margin: 50px; text-align: center">Категории</h2>
 
-
-<div class="box-green">@Html.ActionLink("Всички", "Index", "Items")</div>
-
 @*<div class="box-green">@Html.ActionLink(category.Name, "ItemsInCategory", "Items", new { id = category.Id }, null)</div>*@
 
 <div class="container">
@@ -18,13 +15,13 @@
         @foreach (var category in Model)
         {
 
-            <div class="col-md-4" id="@category.Id" style="margin-bottom: 100px">
+            <div class="col-md-4" id="@category.Id" style="padding-left: 0px; padding-right: 0px;">
                 <figure class="card card-product">
 
                     <a href="/Items/ItemsInCategory/@category.Id"><div class="img-wrap"><img src="~/Images/@category.ImagePath"></div></a>
 
                     <figcaption class="info-wrap">
-                        <a href="/Items/ItemsInCategory/@category.Id"><h4 class="title">@category.Name</h4></a>
+                        <a href="/Items/ItemsInCategory/@category.Id"><h4 class="title" style="max-height: 19px; overflow: hidden;">@category.Name</h4></a>
                     </figcaption>
                     @if (User.IsInRole(RoleName.Admin))
                     {

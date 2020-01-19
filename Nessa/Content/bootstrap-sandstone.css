@@ -6842,9 +6842,12 @@ input:focus,
 .card-product .price-old {
   color: #999;
 }
+.card-product:hover {
+  margin: -3px;
+}
 .col-md-4:hover {
-  border: solid 3px #81b33a;
-  margin: -1px 0 0 -1px;
+  border: 3px solid #81b33a;
+  overflow: hidden;
 }
 /* Details page */
 .preview {
@@ -6892,7 +6895,6 @@ input:focus,
             animation-duration: .3s; }
 
 .card {
-  margin-top: 50px;
   padding: 3em;
   line-height: 1.5em; }
 
