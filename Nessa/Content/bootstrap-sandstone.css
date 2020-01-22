@@ -6842,9 +6842,9 @@ input:focus,
 .card-product .price-old {
   color: #999;
 }
-.card-product:hover {
+/* .card-product:hover {
   margin: -3px;
-}
+} */
 .col-md-4:hover {
   border: 3px solid #81b33a;
   overflow: hidden;
@@ -7145,4 +7145,13 @@ overflow: visible;
 .form-wrapper button::-moz-focus-inner {
     border: 0;
     padding: 0;
+}
+
+.home-page-item{
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  float: left;
+  width: 33.33333333%;
 }
