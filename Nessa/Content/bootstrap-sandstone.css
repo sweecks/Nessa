@@ -1599,6 +1599,7 @@ pre code {
   margin-left: auto;
 }
 .row {
+  margin-top: 30px;
   margin-right: -15px;
   margin-left: -15px;
 }
@@ -6845,6 +6846,10 @@ input:focus,
  .card-product:hover {
   margin: -3px;
 }
+.col-md-3:hover {
+  border: 3px solid #81b33a;
+  overflow: hidden;
+}
 .col-md-4:hover {
   border: 3px solid #81b33a;
   overflow: hidden;
@@ -6895,8 +6900,10 @@ input:focus,
             animation-duration: .3s; }
 
 .card {
-  padding: 3em;
-  line-height: 1.5em; }
+  padding: 2em;
+  line-height: 1.5em; 
+  border: 1px solid #eee;;
+}
 
 @media screen and (min-width: 997px) {
   .wrapper {

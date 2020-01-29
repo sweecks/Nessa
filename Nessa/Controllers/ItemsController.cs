@@ -27,25 +27,25 @@ namespace Nessa.Controllers
         }
 
         // GET: Items
-        [AllowAnonymous]
-        public ActionResult Index(string search, int? page)
-        {
-            if (search == null)
-            {
-                return View(_context.Items
-                    .Include(i => i.Images)
-                    .OrderBy(i => i.CategoryId)
-                    .ToList().ToPagedList(page ?? 1, 9));
-            }
-            else
-            {
-                return View(_context.Items
-                    .Include(i => i.Images)
-                    .Where(i => i.Name.Contains(search))
-                    .OrderBy(i => i.CategoryId)
-                    .ToList().ToPagedList(page ?? 1, 9));
-            }
-        }
+        //[AllowAnonymous]
+        //public ActionResult Index(string search, int? page)
+        //{
+        //    if (search == null)
+        //    {
+        //        return View(_context.Items
+        //            .Include(i => i.Images)
+        //            .OrderBy(i => i.CategoryId)
+        //            .ToList().ToPagedList(page ?? 1, 9));
+        //    }
+        //    else
+        //    {
+        //        return View(_context.Items
+        //            .Include(i => i.Images)
+        //            .Where(i => i.Name.Contains(search))
+        //            .OrderBy(i => i.CategoryId)
+        //            .ToList().ToPagedList(page ?? 1, 9));
+        //    }
+        //}
 
         [AllowAnonymous]
         public ActionResult Details(int id)
@@ -63,14 +63,14 @@ namespace Nessa.Controllers
                 return View(_context.Items
                     .Include(i => i.Category).Include(i => i.Images)
                     .Where(i => i.CategoryId == id)
-                    .ToList().ToPagedList(page ?? 1, 9));
+                    .ToList().ToPagedList(page ?? 1, 16));
             }
             else
             {
                  return View(_context.Items
                      .Include(i => i.Category).Include(i => i.Images)
                      .Where(i => i.CategoryId == id && i.Name.Contains(search))
-                     .ToList().ToPagedList(page ?? 1, 9));
+                     .ToList().ToPagedList(page ?? 1, 16));
             }
         }
 
