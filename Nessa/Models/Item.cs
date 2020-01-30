@@ -23,7 +23,7 @@ namespace Nessa.Models
 
         [Required(ErrorMessage = "Моля въведете цена!")]
         [Display(Name = "Цена")]
-        public string Price { get; set; }
+        public decimal Price { get; set; }
 
         public Category Category { get; set; }
 

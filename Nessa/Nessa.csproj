@@ -258,6 +258,10 @@
     <Compile Include="Migrations\201912182034312_AddImageToCategory.Designer.cs">
       <DependentUpon>201912182034312_AddImageToCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001301908056_ChangingPriceTypeToDecimal.cs" />
+    <Compile Include="Migrations\202001301908056_ChangingPriceTypeToDecimal.Designer.cs">
+      <DependentUpon>202001301908056_ChangingPriceTypeToDecimal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
@@ -637,6 +641,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201912182034312_AddImageToCategory.resx">
       <DependentUpon>201912182034312_AddImageToCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001301908056_ChangingPriceTypeToDecimal.resx">
+      <DependentUpon>202001301908056_ChangingPriceTypeToDecimal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

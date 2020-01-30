@@ -124,3 +124,9 @@ C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.csproj.CopyComplete
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.pdb
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.csprojAssemblyReference.cache
+C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.dll
+C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.Mvc.dll
+C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.xml
+C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.Mvc.xml
+C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.AddImageToCategory.resources
+C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.ChangingPriceTypeToDecimal.resources
