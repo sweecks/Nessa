@@ -74,7 +74,7 @@
             $("#oneImage").on("click", ".js-delete", function () {
                 var button = $(this);
 
-                bootbox.confirm("Сигурен ли си, че искаш да изтриеш този продукт?", function (result) {
+                bootbox.confirm("Сигурен ли си, че искаш да изтриеш това изображение?", function (result) {
                     if (result) {
                         $.ajax({
                             url: "/api/images/" + button.attr("data-image-id"),

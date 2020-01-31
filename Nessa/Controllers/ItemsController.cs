@@ -60,17 +60,29 @@ namespace Nessa.Controllers
         {
             if (search == null)
             {
-                return View(_context.Items
+                var viewModel = new ItemsInCategoryViewModel
+                { 
+                    Category = _context.Categories.SingleOrDefault(c => c.Id == id),
+                    Items = _context.Items
                     .Include(i => i.Category).Include(i => i.Images)
                     .Where(i => i.CategoryId == id)
-                    .ToList().ToPagedList(page ?? 1, 16));
+                    .ToList().ToPagedList(page ?? 1, 16)
+                };
+
+                return View(viewModel);
             }
             else
             {
-                 return View(_context.Items
+                var viewModel = new ItemsInCategoryViewModel
+                {
+                    Category = _context.Categories.SingleOrDefault(c => c.Id == id),
+                    Items = _context.Items
                      .Include(i => i.Category).Include(i => i.Images)
                      .Where(i => i.CategoryId == id && i.Name.Contains(search))
-                     .ToList().ToPagedList(page ?? 1, 16));
+                     .ToList().ToPagedList(page ?? 1, 16)
+                };
+
+                 return View(viewModel);
             }
         }
 

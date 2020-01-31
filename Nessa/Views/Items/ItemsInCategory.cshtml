@@ -1,4 +1,4 @@
-﻿@model IPagedList<Nessa.Models.Item>
+﻿@model Nessa.ViewModels.ItemsInCategoryViewModel
 @using Nessa.Models
 @using PagedList
 @using PagedList.Mvc
@@ -8,20 +8,20 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (!Model.Any())
+@if (!Model.Items.Any())
 {
-    <h2 style="margin: 50px; text-align: center">Няма намерени продукти!</h2>
-
+    <h2 style="margin: 50px; text-align: center">@Model.Category.Name</h2>
 
     using (Html.BeginForm("ItemsInCategory", "Items", FormMethod.Get, new { @class = "form-inline my-2 my-lg-0" }))
     {
         @Html.TextBox("search", null, new { @class = "form-control mr-sm-2" }) <button type="submit" class="btn btn-success">Търси!</button>
     }
 
+    <p style="margin: 70px; text-align: center; font-size: 35px">Няма намерени продукти!</p>
 }
 else
 {
-    <h2 style="margin: 50px; text-align: center">@Model.ElementAt(0).Category.Name</h2>
+    <h2 style="margin: 50px; text-align: center">@Model.Items.ElementAt(0).Category.Name</h2>
 
     using (Html.BeginForm("ItemsInCategory", "Items", FormMethod.Get, new { @class = "form-inline my-2 my-lg-0" }))
     {
@@ -30,7 +30,7 @@ else
 
     <div class="container">
         <div id="oneItem" class="row">
-            @foreach (var item in Model)
+            @foreach (var item in Model.Items)
             {
                 <div class="col-md-3" id="@item.Id" style="padding-left: 0px; padding-right: 0px">
                     <figure class="card card-product">
@@ -62,7 +62,7 @@ else
             }
         </div>
     </div>
-    @Html.PagedListPager(Model, page => Url.Action("ItemsInCategory", new { page, search = Request.QueryString["search"] }))
+    @Html.PagedListPager(Model.Items, page => Url.Action("ItemsInCategory", new { page, search = Request.QueryString["search"] }))
 }
 
 @section scripts
