@@ -180,7 +180,7 @@ namespace Nessa.Controllers
                 }
                 _context.SaveChanges();
 
-                return RedirectToAction("Details", "Items", new { id = itemInDb.Id });
+                return RedirectToAction("ItemsInCategory", "Items", new { id = item.CategoryId });
             }
         }
 
