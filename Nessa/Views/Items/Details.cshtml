@@ -19,14 +19,14 @@
                             {
                                 if (i == 0)
                                 {
-                                    <div class="tab-pane active" id="pic-@i"><img src="~/Images/@Model.Images.ElementAt(i).Path" /></div>
+                                    <div class="tab-pane active" id="pic-@i"><img alt="itemImg" src="~/Images/@Model.Images.ElementAt(i).Path" /></div>
                                 }
-                                <div class="tab-pane" id="pic-@i"><img src="~/Images/@Model.Images.ElementAt(i).Path" /></div>
+                                <div class="tab-pane" id="pic-@i"><img alt="itemImg" src="~/Images/@Model.Images.ElementAt(i).Path" /></div>
                             }
                         }
                         else
                         {
-                            <div class="tab-pane active" id="pic-1"><img src="~/Images/nessalogo.png" /></div>
+                            <div class="tab-pane active" id="pic-1"><img alt="nessaLogo" src="~/Images/nessalogo.png" /></div>
                         }
 
 
@@ -37,7 +37,7 @@
                             for (int i = 0; i < Model.Images.Count; i++)
                             {
                                 <li>
-                                    <a data-target="#pic-@i" data-toggle="tab"><img src="~/Images/@Model.Images.ElementAt(i).Path" /></a>
+                                    <a data-target="#pic-@i" data-toggle="tab"><img alt="itemImg" src="~/Images/@Model.Images.ElementAt(i).Path" /></a>
                                     @if (User.IsInRole(RoleName.Admin))
                                     {
                                         <button class="js-delete" data-image-id="@Model.Images.ElementAt(i).Id">Изтрии</button>

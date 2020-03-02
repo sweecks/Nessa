@@ -16,11 +16,11 @@
                 <figure class="card card-product">
                     @if (!category.ImagePath.IsEmpty())
                     {
-                        <a href="/Items/ItemsInCategory/@category.Id"><div class="img-wrap"><img src="~/Images/@category.ImagePath"></div></a>
+                        <a href="/Items/ItemsInCategory/@category.Id"><div class="img-wrap"><img alt="categoryImg" src="~/Images/@category.ImagePath"></div></a>
                     }
                     else
                     {
-                        <a href="/Items/ItemsInCategory/@category.Id"><div class="img-wrap"><img src="~/Images/nessalogo.png"></div></a>
+                        <a href="/Items/ItemsInCategory/@category.Id"><div class="img-wrap"><img alt="nessaLogo" src="~/Images/nessalogo.png"></div></a>
                     }
                     <figcaption class="info-wrap">
                         <a href="/Items/ItemsInCategory/@category.Id"><h4 class="title" style="max-height: 19px; overflow: hidden;">@category.Name</h4></a>

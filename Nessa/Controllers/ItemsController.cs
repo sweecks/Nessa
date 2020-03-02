@@ -26,27 +26,6 @@ namespace Nessa.Controllers
             _context.Dispose();
         }
 
-        // GET: Items
-        //[AllowAnonymous]
-        //public ActionResult Index(string search, int? page)
-        //{
-        //    if (search == null)
-        //    {
-        //        return View(_context.Items
-        //            .Include(i => i.Images)
-        //            .OrderBy(i => i.CategoryId)
-        //            .ToList().ToPagedList(page ?? 1, 9));
-        //    }
-        //    else
-        //    {
-        //        return View(_context.Items
-        //            .Include(i => i.Images)
-        //            .Where(i => i.Name.Contains(search))
-        //            .OrderBy(i => i.CategoryId)
-        //            .ToList().ToPagedList(page ?? 1, 9));
-        //    }
-        //}
-
         [AllowAnonymous]
         public ActionResult Details(int id)
         {
@@ -183,20 +162,5 @@ namespace Nessa.Controllers
                 return RedirectToAction("ItemsInCategory", "Items", new { id = item.CategoryId });
             }
         }
-
-        //public ActionResult Remove(int id)
-        //{
-        //    var item = _context.Items.SingleOrDefault(i => i.Id == id);
-
-        //    if (item == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-
-        //    _context.Items.Remove(item);
-        //    _context.SaveChanges();
-
-        //    return RedirectToAction("Index", "Categories");
-        //}
     }
 }

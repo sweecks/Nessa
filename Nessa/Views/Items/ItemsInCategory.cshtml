@@ -36,11 +36,11 @@ else
                     <figure class="card card-product">
                         @if (item.Images.Count > 0)
                         {
-                            <a href="/Items/Details/@item.Id"><div class="img-wrap"><img src="~/Images/@item.Images.ElementAt(0).Path"></div></a>
+                            <a href="/Items/Details/@item.Id"><div class="img-wrap"><img alt="itemImg" src="~/Images/@item.Images.ElementAt(0).Path"></div></a>
                         }
                         else
                         {
-                            <a href="/Items/Details/@item.Id"><div class="img-wrap"><img src="~/Images/nessalogo.png"></div></a>
+                            <a href="/Items/Details/@item.Id"><div class="img-wrap"><img alt="nessaLogo" src="~/Images/nessalogo.png"></div></a>
                         }
                         <figcaption class="info-wrap">
                             <a href="/Items/Details/@item.Id"><h4 class="title" style="max-height: 19px; overflow: hidden">@item.Name</h4></a>
