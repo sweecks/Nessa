@@ -66,6 +66,8 @@ C:\Users\Kris\Desktop\Nessa\Nessa\bin\Microsoft.Owin.Security.Twitter.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\Newtonsoft.Json.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\Owin.dll
+C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.dll
+C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.Mvc.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\System.Net.Http.Formatting.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\System.Web.Helpers.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\System.Web.Http.dll
@@ -77,6 +79,8 @@ C:\Users\Kris\Desktop\Nessa\Nessa\bin\System.Web.WebPages.Deployment.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\System.Web.WebPages.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\System.Web.WebPages.Razor.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\WebGrease.dll
+C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.xml
+C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.Mvc.xml
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\System.Net.Http.Formatting.xml
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\System.Web.Http.xml
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\System.Web.Http.WebHost.xml
@@ -119,14 +123,9 @@ C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.CategoryIdToBeReq
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.ModelImageChange.resources
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.RequireThePriceAndDescription.resources
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.SeedUsers.resources
+C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.AddImageToCategory.resources
+C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.ChangingPriceTypeToDecimal.resources
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.csproj.GenerateResource.cache
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.csproj.CopyComplete
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.dll
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.pdb
-C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.csprojAssemblyReference.cache
-C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.dll
-C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.Mvc.dll
-C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.xml
-C:\Users\Kris\Desktop\Nessa\Nessa\bin\PagedList.Mvc.xml
-C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.AddImageToCategory.resources
-C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.ChangingPriceTypeToDecimal.resources

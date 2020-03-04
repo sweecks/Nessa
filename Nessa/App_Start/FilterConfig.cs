@@ -9,7 +9,6 @@ namespace Nessa
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new AuthorizeAttribute());
-            filters.Add(new RequireHttpsAttribute());
         }
     }
 }
