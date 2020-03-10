@@ -108,6 +108,7 @@ C:\Users\Kris\Desktop\Nessa\Nessa\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\Microsoft.Owin.Security.OAuth.xml
 C:\Users\Kris\Desktop\Nessa\Nessa\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.csprojAssemblyReference.cache
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.InitialModel.resources
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.PopulateCategories.resources
 C:\Users\Kris\Desktop\Nessa\Nessa\obj\Release\Nessa.Migrations.NewTestPopulateForCategories.resources
